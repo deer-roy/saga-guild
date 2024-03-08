@@ -4,25 +4,29 @@ using SagaGuild.Common.Contracts;
 
 namespace SagaGuild.Services.Consumers;
 
-public class AssembleBurgerConsumer: IConsumer<AssembleBurgerRequestedMessage>
+public class AssembleBurgerConsumer : IConsumer<AssembleBurgerRequestedMessage>
 {
     private readonly ILogger<MyFirstConsumer> _logger;
-    
-    public AssembleBurgerConsumer(
+
+    public AssembleBurgerConsumer
+    (
         ILogger<MyFirstConsumer> logger
     )
     {
         _logger = logger;
     }
-    
+
     public async Task Consume
     (
         ConsumeContext<AssembleBurgerRequestedMessage> context
     )
     {
-        await context.Publish(new BurgerAssembledMessage(
-            context.Message.ShopId
-            )
+
+        _logger.LogInformation("Burger assembled");
+        await context.Publish(new BurgerAssembledMessage
+            {
+                ShopId = context.Message.ShopId
+            }
         );
     }
 }

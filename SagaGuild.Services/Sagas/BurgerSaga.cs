@@ -56,7 +56,11 @@ public class BurgerSagaStateMachine : MassTransitStateMachine<BurgerSagaInstance
            When(OrderSubmittedEvent)
                .TransitionTo(BakingBun)
                .PublishAsync(context => context.Init<BakeBunRequestedMessage>(
-                   new BakeBunRequestedMessage(context.Saga.CorrelationId)
+                   new BakeBunRequestedMessage
+                   {
+                       ShopId = context.Saga.CorrelationId
+                   }
+ 
                ))
            );
 
@@ -65,7 +69,10 @@ public class BurgerSagaStateMachine : MassTransitStateMachine<BurgerSagaInstance
            When(BunBakedEvent) 
                .TransitionTo(FryingPatty)
                .PublishAsync(context => context.Init<FryPattyRequestedMessage>(
-                   new FryPattyRequestedMessage(context.Saga.CorrelationId)
+                   new FryPattyRequestedMessage
+                   {
+                       ShopId = context.Saga.CorrelationId
+                   }
                ))
        );
        
@@ -74,7 +81,9 @@ public class BurgerSagaStateMachine : MassTransitStateMachine<BurgerSagaInstance
            When(PattyFriedEvent) 
                .TransitionTo(AssemblingBurger)
                .PublishAsync(context => context.Init<AssembleBurgerRequestedMessage>(
-                   new AssembleBurgerRequestedMessage(context.Saga.CorrelationId)
+                   new AssembleBurgerRequestedMessage{
+                           ShopId = context.Saga.CorrelationId
+                       }
                ))
        );
        

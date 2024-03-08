@@ -1,31 +1,38 @@
 namespace SagaGuild.Common.Contracts;
 
 
-public record OrderSubmittedMessage(
-    Guid ShopId
-);
+public class OrderSubmittedMessage
+{
+    public Guid ShopId { get; init; }
+}
 
-public record BakeBunRequestedMessage(
-    Guid ShopId
-);
+public class BakeBunRequestedMessage
+{
+    public Guid ShopId { get; init; }
+}
 
-public record BunBakedMessage(
-    Guid ShopId
-);
+public class BunBakedMessage
+{
+    public Guid ShopId { get; init; }
+}
 
-public record FryPattyRequestedMessage(
-    Guid ShopId
-);
+public class FryPattyRequestedMessage
+{
+    public Guid ShopId { get; init; }
+}
 
-public record PattyFriedMessage(
-    Guid ShopId
-);
+public class PattyFriedMessage
+{
+    public Guid ShopId { get; init; }
+}
 
-public record AssembleBurgerRequestedMessage(
-    Guid ShopId
-);
+public class AssembleBurgerRequestedMessage
+{
+    public Guid ShopId { get; init; }
+}
 
-public record BurgerAssembledMessage(
-    Guid ShopId
-);
+public class BurgerAssembledMessage
+{
+    public Guid ShopId { get; init; }
+}
 

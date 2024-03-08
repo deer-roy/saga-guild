@@ -6,6 +6,7 @@ using Microsoft.Extensions.Hosting;
 using SagaGuild.Common.DbContexts;
 using SagaGuild.Services.Consumers;
 using SagaGuild.Services.Sagas;
+using System.Reflection;
 
 var builder = Host.CreateApplicationBuilder();
 builder.Configuration.AddJsonFile("appsettings.json");
@@ -15,7 +16,9 @@ builder.Services.AddMassTransit(config => {
     config.AddDbContext<GenericSagaDbContext>(opts => {
         opts.UseNpgsql(builder.Configuration["DbConnection"]);
     });
-    config.AddConsumer<MyFirstConsumer>();
+    
+    config.AddConsumers(Assembly.GetEntryAssembly());
+    
     config.AddSagaStateMachine<BurgerSagaStateMachine, BurgerSagaInstance>();
     config.AddSagaRepository<BurgerSagaInstance>()
         .EntityFrameworkRepository(rabbitCfg => {

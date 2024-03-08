@@ -20,9 +20,12 @@ public class BakeBunConsumer: IConsumer<BakeBunRequestedMessage>
         ConsumeContext<BakeBunRequestedMessage> context
     )
     {
-        await context.Publish(new BunBakedMessage(
-            context.Message.ShopId
-            )
+        _logger.LogInformation("Bun baked");
+        await context.Publish(
+            new BunBakedMessage
+            {
+            ShopId = context.Message.ShopId
+            }
         );
     }
 }
