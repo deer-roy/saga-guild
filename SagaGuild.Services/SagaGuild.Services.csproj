@@ -20,4 +20,12 @@
     </Content>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\SagaGuild.Common\SagaGuild.Common.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SagaGuild.Common\SagaGuild.Common.csproj" />
+  </ItemGroup>
+
 </Project>
