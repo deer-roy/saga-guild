@@ -22,6 +22,7 @@ public class FryPattyConsumer : IConsumer<FryPattyRequestedMessage>
     )
     {
 
+        await Task.Delay(1000);
         _logger.LogInformation("Patty fried");
         await context.Publish(
             new PattyFriedMessage

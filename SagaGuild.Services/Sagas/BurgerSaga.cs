@@ -29,6 +29,7 @@ public class BurgerSagaStateMachine : MassTransitStateMachine<BurgerSagaInstance
    public BurgerSagaStateMachine()
    {
        InstanceState(x => x.CurrentState);
+       SetCompletedWhenFinalized();
        
        #region correlate events
 

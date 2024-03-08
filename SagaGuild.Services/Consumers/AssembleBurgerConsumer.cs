@@ -21,7 +21,7 @@ public class AssembleBurgerConsumer : IConsumer<AssembleBurgerRequestedMessage>
         ConsumeContext<AssembleBurgerRequestedMessage> context
     )
     {
-
+        await Task.Delay(1000);
         _logger.LogInformation("Burger assembled");
         await context.Publish(new BurgerAssembledMessage
             {

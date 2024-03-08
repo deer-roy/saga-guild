@@ -20,6 +20,7 @@ public class BakeBunConsumer: IConsumer<BakeBunRequestedMessage>
         ConsumeContext<BakeBunRequestedMessage> context
     )
     {
+        await Task.Delay(1000);
         _logger.LogInformation("Bun baked");
         await context.Publish(
             new BunBakedMessage
