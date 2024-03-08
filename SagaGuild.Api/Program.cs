@@ -1,3 +1,4 @@
+using MassTransit;
 using SagaGuild.Api.Services;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -8,6 +9,26 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddGrpc();
 builder.Services.AddGrpcReflection();
+
+builder.Services.AddMassTransit(config => {
+    // mass transit config  
+    config.UsingRabbitMq(
+        (
+            context,
+            cfg
+        ) => {
+            cfg.Host(
+                builder.Configuration["RabbitMQ:Host"],
+                builder.Configuration["RabbitMQ:VirtualHost"],
+                c => {
+                    c.Username(builder.Configuration["RabbitMQ:User"]);
+                    c.Password(builder.Configuration["RabbitMQ:Password"]);
+                }
+            );
+        });
+});
+
+
 
 var app = builder.Build();
 
