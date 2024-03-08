@@ -21,6 +21,7 @@ public class GreeterService : Greeter.GreeterBase
     {
         _logger.LogInformation("Publishing message");
         await _publishEndpoint.Publish(new MyFirstMessage());
+        await _publishEndpoint.Publish(new OrderSubmittedMessage(Guid.NewGuid()));
         return new HelloReply
         {
             Message = "Hello " + request.Name
