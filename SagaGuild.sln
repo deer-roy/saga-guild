@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SagaGuild.Api", "SagaGuild.Api\SagaGuild.Api.csproj", "{63543B45-1D06-4A96-9C6C-F1D74D8F593B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SagaGuild.Services", "SagaGuild.Services\SagaGuild.Services.csproj", "{95C9D069-2C24-4402-A931-BF2D54366F0D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SagaGuild.Common", "SagaGuild.Common\SagaGuild.Common.csproj", "{A747A37F-416B-4B72-A33D-F336BAC5AC88}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{63543B45-1D06-4A96-9C6C-F1D74D8F593B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{63543B45-1D06-4A96-9C6C-F1D74D8F593B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{63543B45-1D06-4A96-9C6C-F1D74D8F593B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{63543B45-1D06-4A96-9C6C-F1D74D8F593B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{95C9D069-2C24-4402-A931-BF2D54366F0D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{95C9D069-2C24-4402-A931-BF2D54366F0D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{95C9D069-2C24-4402-A931-BF2D54366F0D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{95C9D069-2C24-4402-A931-BF2D54366F0D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A747A37F-416B-4B72-A33D-F336BAC5AC88}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A747A37F-416B-4B72-A33D-F336BAC5AC88}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A747A37F-416B-4B72-A33D-F336BAC5AC88}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A747A37F-416B-4B72-A33D-F336BAC5AC88}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
